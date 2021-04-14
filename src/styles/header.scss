@@ -1,0 +1,45 @@
+.no-webp,
+.no-js {
+  --hero-bg: url("./images/hero-bg.jpg");
+}
+
+.webp {
+  --hero-bg: url("./images/hero-bg.webp");
+}
+
+header {
+  min-height: 100vh;
+
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  display: flex;
+  align-items: center;
+
+  h1,
+  h2 {
+    // Hide Headers Visually
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: -1000px;
+    left: -1000px;
+    overflow: hidden;
+  }
+}
+
+.header-img {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header-img img {
+  display: block;
+  max-width: 75%;
+  margin: 0 auto;
+  height: auto;
+
+  filter: drop-shadow(0px 64px 32px rgba(0, 0, 0, 0.3));
+}
