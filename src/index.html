@@ -13,7 +13,17 @@
     </header>
 
     <section class="social">
-      <div class="music-video"></div>
+      <div class="music-video">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/hnp1pt8biD4?controls=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
 
       <div class="streaming">
         <h2>Listen Now</h2>
@@ -63,14 +73,65 @@
         </p>
       </div>
 
-      <div class="gallery"></div>
+      <div class="gallery">
+        <picture>
+          <source srcset="images/gallery1.webp" type="image/webp" />
+          <source srcset="images/gallery1.jpg" type="image/jpeg" />
+          <img
+            loading="lazy"
+            src="images/gallery1.jpg"
+            alt="Woman giving a peace sign"
+          />
+        </picture>
+        <picture>
+          <source srcset="images/gallery2.webp" type="image/webp" />
+          <source srcset="images/gallery2.jpg" type="image/jpeg" />
+          <img
+            loading="lazy"
+            src="images/gallery2.jpg"
+            alt="Woman on stage, singing"
+          />
+        </picture>
+        <picture>
+          <source srcset="images/gallery3.webp" type="image/webp" />
+          <source srcset="images/gallery3.jpg" type="image/jpeg" />
+          <img
+            loading="lazy"
+            src="images/gallery3.jpg"
+            alt="Man on stage with guitar"
+          />
+        </picture>
+        <picture>
+          <source srcset="images/gallery4.webp" type="image/webp" />
+          <source srcset="images/gallery4.jpg" type="image/jpeg" />
+          <img
+            loading="lazy"
+            src="images/gallery4.jpg"
+            alt="Man on stage with guitar, his back to the camera"
+          />
+        </picture>
+        <picture>
+          <source srcset="images/gallery5.webp" type="image/webp" />
+          <source srcset="images/gallery5.jpg" type="image/jpeg" />
+          <img
+            loading="lazy"
+            src="images/gallery5.jpg"
+            alt="Man behind a drumset, outdoors"
+          />
+        </picture>
+      </div>
     </section>
 
     <section class="newsletter">
       <h2>Subscribe to our newsletter</h2>
       <form>
-        <input type="text" name="email" id="email" placeholder="Email (ex. name @example.com)">
-        <input class="cta-link" type="submit" value="Subscribe">
+        <input
+          type="text"
+          name="email"
+          id="email"
+          placeholder="Email (ex. name @example.com)"
+        />
+        <input class="cta-link" type="submit" value="Subscribe" />
       </form>
     </section>
 
