@@ -1,0 +1,6 @@
+$desktop-bp: 750px;
+@mixin desktop-bp {
+  @media screen and (min-width: $desktop-bp) {
+    @content;
+  }
+}

@@ -1,6 +1,8 @@
 @import "./styles/fa-scss/fontawesome.scss";
 @import "./styles/fa-scss/brands.scss";
 
+@import "./styles/breakpoints.scss";
+
 // Basic Resets
 
 * {
@@ -89,12 +91,17 @@ p {
 
   &::before {
     font-size: 3rem;
+
+    @include desktop-bp() {
+      font-size: calc(3.5rem + 1vw);
+    }
   }
 
   &:hover,
   &:focus {
     color: hsl(118, 30%, 50%);
   }
+
 
   &.icon-apple::before {
     content: fa-content($fa-var-apple);
@@ -117,6 +124,8 @@ p {
   & :not(:first-child) {
     margin-left: 2rem;
   }
+
+  
 }
 
 // Layouts

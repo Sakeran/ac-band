@@ -1,3 +1,5 @@
+@import "./styles/breakpoints.scss";
+
 .no-webp,
 .no-js {
   --social-bg-img: url("./images/social-bg.jpg");
@@ -11,14 +13,47 @@
   min-height: 50vh;
   background-image: var(--social-bg-img);
 
+  @include desktop-bp() {
+    padding-bottom: 2rem;
+    
+    display: grid;
+
+    grid-template-columns: 1fr 2fr min(3fr, 720px) 1fr;
+    grid-template-areas:
+      ". streaming video ."
+      ". cover preorder .";
+
+    h2 {
+      font-size: calc(3.5rem + 2vw);
+    }
+  }
+
   .preorder {
+    grid-area: preorder;
+
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    line-height: 1.1;
+
+    @include desktop-bp() {
+      justify-self: center;
+      text-align: center;
+
+      a {
+        font-size: calc(2rem + 1vw);
+      }
+
+      h2 {
+        font-size: calc(4rem + 3vw);
+      }
+    }
   }
 
   .music-video {
+    grid-area: video;
+
     position: relative;
     top: -3rem;
 
@@ -26,6 +61,11 @@
     margin: 0 0.5rem;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 0.5rem;
+
+    @include desktop-bp() {
+      top: -20%;
+      background: none;
+    }
   }
 
   .music-video-wrapper {
@@ -43,7 +83,11 @@
   }
 
   .album-cover {
+    grid-area: cover;
+    place-self: center;
+
     width: 80%;
+    max-width: 448px;
     margin: 1rem auto;
 
     img {
@@ -51,9 +95,21 @@
       background-color: rgba(255, 255, 255, 0.2);
       border-radius: 0.5rem;
     }
+
+    @include desktop-bp() {
+      margin: 0;
+
+      img {
+        position: relative;
+        top: -40px;
+        background: none;
+      }
+    }
   }
 
   .streaming {
+    grid-area: streaming;
+
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -61,6 +117,10 @@
 
     & :last-child {
       margin-bottom: 1rem;
+    }
+
+    @include desktop-bp() {
+      
     }
   }
 }
