@@ -26,31 +26,46 @@
 
     <section class="social">
       <div class="music-video">
-        <!-- <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/hnp1pt8biD4?controls=0"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe> -->
+        <div class="music-video-wrapper">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/hnp1pt8biD4?controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+
+        </div>
+      </div>
+
+      
+
+      <div class="album-cover">
+        <picture>
+          <source srcset="images/cover.webp" type="image/webp" />
+          <source srcset="images/cover.jpg" type="image/jpeg" />
+          <img
+            loading="lazy"
+            src="images/cover.jpg"
+            alt="Album cover for 'Fool me Twice'."
+          />
+        </picture>
+      </div>
+
+      <div class="preorder">
+        <h2>Coming August 3</h2>
+        <a class="cta-link" href="#">Pre-Order Album</a>
       </div>
 
       <div class="streaming">
         <h2>Listen Now</h2>
         <div class="button-list">
-          <a class="icon-link" href="#">Apple Music</a>
-          <a class="icon-link" href="#">Spotify</a>
-          <a class="icon-link" href="#">Youtube</a>
+          <a class="icon-link icon-apple" href="#"><span>Apple Music</span></a>
+          <a class="icon-link icon-spotify" href="#"><span>Spotify</span></a>
+          <a class="icon-link icon-youtube" href="#"><span>Youtube</span></a>
         </div>
-      </div>
-
-      <div class="album-cover"></div>
-
-      <div class="preorder">
-        <h2>Coming August 3</h2>
-        <a class="cta-link" href="#">Pre-Order Album</a>
       </div>
     </section>
 

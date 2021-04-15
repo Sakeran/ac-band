@@ -1,15 +1,21 @@
+@import "./styles/fa-scss/fontawesome.scss";
+@import "./styles/fa-scss/brands.scss";
+
+// Basic Resets
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-@import "./styles/header.scss";
-
 // General Element Styles
 
 body {
+  background-color: black;
   font-family: "Lato", sans-serif;
+  color: white;
+  line-height: 1.4;
 }
 
 h1,
@@ -18,9 +24,100 @@ h3 {
   font-size: 3rem;
   font-family: "Amatic SC", sans-serif;
   font-weight: 700;
+  margin: 0 0.5rem 1rem;
 }
 
 img {
   max-width: 100%;
   height: auto;
 }
+
+p {
+  margin: 0 0.5rem;
+}
+
+// Custom Elements
+
+.cta-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+
+  cursor: pointer;
+
+  border: 1px solid transparent;
+  border-radius: 1rem;
+
+  font-family: "Amatic SC", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+
+  color: white;
+  background-color: hsl(185, 16%, 29%);
+
+  transition: all 0.2s ease-out;
+
+  &:hover,
+  &:focus {
+    color: hsl(118, 30%, 80%);
+    border-color: hsl(118, 30%, 50%);
+    background-color: mix(hsl(185, 16%, 29%), black, 70%);
+  }
+
+  &:active {
+    background-color: mix(hsl(185, 16%, 29%), black, 60%);
+  }
+}
+
+.icon-link {
+  @extend %fa-icon;
+  @extend .fab;
+
+  & > span {
+    display: inline-block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    left: -9999px;
+  }
+
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+
+  &::before {
+    font-size: 3rem;
+  }
+
+  &:hover,
+  &:focus {
+    color: hsl(118, 30%, 50%);
+  }
+
+  &.icon-apple::before {
+    content: fa-content($fa-var-apple);
+  }
+
+  &.icon-spotify::before {
+    content: fa-content($fa-var-spotify);
+  }
+
+  &.icon-youtube::before {
+    content: fa-content($fa-var-youtube);
+  }
+}
+
+.button-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  & :not(:first-child) {
+    margin-left: 2rem;
+  }
+}
+
+// Layouts
+
+@import "./styles/header.scss";
+@import "./styles/social.scss";
