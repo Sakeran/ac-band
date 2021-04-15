@@ -1,3 +1,5 @@
+@import "./styles/breakpoints.scss";
+
 .no-webp,
 .no-js {
   --polaroid-bg: url("./images/polaroid.jpg");
@@ -12,6 +14,16 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+
+  @include desktop-bp() {
+    display: grid;
+
+    grid-template-columns: 1fr 2fr min(3fr, 768px) 1fr;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas:
+      ". quote . ."
+      ". desc gallery .";
+  }
 
   &::before {
     content: "";
@@ -35,25 +47,45 @@
   }
 
   .quote {
+    grid-area: quote;
     margin: 1rem 0;
 
     p:first-child {
       font-family: "Amatic SC", sans-serif;
       font-size: 2.5rem;
       line-height: 1.1;
-    }
 
+      @include desktop-bp() {
+        font-size: 3rem;
+      }
+    }
+    
     p:nth-child(2) {
       max-width: 35ch;
       font-size: 2em;
       text-align: right;
       padding-right: 1rem;
-
+      
       color: rgba(194, 194, 194);
+
+      @include desktop-bp() {
+        font-size: 2.25rem;
+      }
     }
   }
 
+  .description-body {
+    grid-area: desc;
+
+    @include desktop-bp() {
+        font-size: 1.125rem;
+        padding-right: 1rem;
+      }
+  }
+
   .gallery {
+    grid-area: gallery;
+
     display: flex;
     margin: 1rem 0;
 
@@ -62,11 +94,26 @@
 
     scroll-snap-type: x proximity;
 
+    @include desktop-bp() {
+      width: auto;
+      
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 45%);
+      gap: 0.5rem;
+
+      overflow-y: visible;
+      scroll-snap-type: none;
+
+    }
+
     picture {
       scroll-snap-align: center;
       padding: 0.5rem;
       flex: 0 0 45vw;
-    }
 
+      @include desktop-bp() {
+        padding: 0;
+      }
+    }
   }
 }
