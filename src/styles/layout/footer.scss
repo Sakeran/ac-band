@@ -1,0 +1,15 @@
+footer {
+  padding: 1rem 0;
+  font-size: 0.75em;
+
+  background-color: #010808;
+  border-top: 2px solid mix(#010808, black, 50%);
+
+  display: flex;
+  justify-content: center;
+  
+
+  a {
+    color: white;
+  }
+}
