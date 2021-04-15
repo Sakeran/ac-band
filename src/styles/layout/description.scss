@@ -1,0 +1,72 @@
+.no-webp,
+.no-js {
+  --polaroid-bg: url("./images/polaroid.jpg");
+}
+
+.webp {
+  --polaroid-bg: url("./images/polaroid.webp");
+}
+
+.description {
+  background-color: #343434;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 50vw;
+    height: calc(50vw * 1.23);
+
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    z-index: -1;
+
+    background-color: #343434;
+    background-image: var(--polaroid-bg);
+    background-size: cover;
+
+    background-blend-mode: multiply;
+    opacity: 0.5;
+
+    transform: rotate(30deg);
+  }
+
+  .quote {
+    margin: 1rem 0;
+
+    p:first-child {
+      font-family: "Amatic SC", sans-serif;
+      font-size: 2.5rem;
+      line-height: 1.1;
+    }
+
+    p:nth-child(2) {
+      max-width: 35ch;
+      font-size: 2em;
+      text-align: right;
+      padding-right: 1rem;
+
+      color: rgba(194, 194, 194);
+    }
+  }
+
+  .gallery {
+    display: flex;
+    margin: 1rem 0;
+
+    width: 100%;
+    overflow-y: scroll;
+
+    scroll-snap-type: x proximity;
+
+    picture {
+      scroll-snap-align: center;
+      padding: 0.5rem;
+      flex: 0 0 45vw;
+    }
+
+  }
+}
