@@ -1,3 +1,5 @@
+@import "./styles/breakpoints.scss";
+
 .no-webp,
 .no-js {
   --newsletter-bg: url("./images/newsletter-bg.jpg");
@@ -8,18 +10,31 @@
 }
 
 .newsletter {
-
   border-top: 1px solid hsla(118, 30%, 50%, 0.4);
   background-image: var(--newsletter-bg);
-  
+
   background-color: rgba(#00140e, 0.8);
   background-blend-mode: overlay;
 
   padding: 1rem 0;
 
+  @include desktop-bp() {
+    display: grid;
+    grid-template-columns: 1fr min(100%, 1400px) 1fr;
+    grid-template-areas:
+      ". header ."
+      ". form .";
+  }
+
   h2 {
+    grid-area: header;
+
     text-align: center;
     line-height: 1;
+
+    @include desktop-bp() {
+      font-size: 4rem;
+    }
   }
 
   form {
@@ -27,8 +42,15 @@
     flex-direction: column;
     align-items: center;
 
+    grid-area: form;
+    justify-self: center;
+
     & :not(:first-child) {
       margin-top: 1rem;
+    }
+
+    @include desktop-bp() {
+      align-items: flex-end;
     }
   }
 
@@ -40,7 +62,7 @@
 
   input[type="text"] {
     font-family: "Lato", sans-serif;
-    width: min(512px, 90%);
+    width: 100%;
     font-size: 1.5rem;
     color: #111;
     padding: 0.5rem;
