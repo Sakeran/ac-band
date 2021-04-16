@@ -1,3 +1,5 @@
+@import "./styles/breakpoints.scss";
+
 footer {
   padding: 1rem 0;
   font-size: 0.75em;
@@ -11,5 +13,13 @@ footer {
 
   a {
     color: white;
+  }
+
+  @include desktop-bp() {
+    font-size: 0.9em;
+
+    p {
+      max-width: none;
+    }
   }
 }
