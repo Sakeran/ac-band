@@ -2,11 +2,18 @@
   "name": "ac-band",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {},
+  "main": "dist/index.html",
+  "scripts": {
+    "start": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "cssnano": "^5.0.1",
+    "parcel": "^2.0.0-beta.2",
+    "postcss": "^8.2.10",
     "sass": "^1.32.8"
   },
   "dependencies": {

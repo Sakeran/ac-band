@@ -1,7 +1,6 @@
 import anime from "animejs";
 
 import "./js/modernizr";
-import "./styles.scss";
 
 // Hero polaroid animtion
 anime({
